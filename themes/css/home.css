@@ -19,11 +19,11 @@ a:hover, a:focus {outline:inherit}
 
 .navbar-about {  background-image: url("../img/intro-bg-mtn.png"); height:500px; }
 
-.navbar-contact { background-image: url("../img/contact-bg.jpg"); height:500px; background-position:40% 50%;}
+.navbar-contact { background-image: url("../img/contact-bg.png"); height:500px; background-position:40% 50%;}
 
-.About-case {background-image: url("../img/bg-head-32d717c9.png"); height:500px;}
+.About-case {background-image: url("../img/case-bg.png"); height:500px;}
 
-.product-background {background-image: url("../img/ad/Product.jpg"); height:500px;}
+.product-background {background-image: url("../img/ad/product-bg.png"); height:500px;}
 
 .service-background {background-image: url("../img/News.jpg"); height:500px;}
 
