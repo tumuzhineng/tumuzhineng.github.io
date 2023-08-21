@@ -6,7 +6,7 @@ a:hover, a:focus {outline:inherit}
 
 .navbar-collapse {border:none; box-shadow: none;}
 
-.header-main {background-attachment: fixed; background-color: rgb(38, 38, 38); background-image: url("../img/ad/header-bj1.png"); background-position: 50% 100%; background-repeat: no-repeat; background-size: cover;  box-shadow: -6px 0 0 0 rgb(0, 0, 0); height: 70%; min-height: 690px; padding-bottom: 102px; position: relative; transform: rotate(0deg) scale(1) translate(0%, 0%); transition: all 2s ease 0s;}
+.header-main {background-attachment: fixed; background-color: rgb(38, 38, 38); background-image: url("../img/header-bj1.png"); background-position: 50% 100%; background-repeat: no-repeat; background-size: cover;  box-shadow: -6px 0 0 0 rgb(0, 0, 0); height: 70%; min-height: 690px; padding-bottom: 102px; position: relative; transform: rotate(0deg) scale(1) translate(0%, 0%); transition: all 2s ease 0s;}
 
 .header-section { padding-left:0; padding-right:0;}
 
@@ -23,7 +23,7 @@ a:hover, a:focus {outline:inherit}
 
 .About-case {background-image: url("../img/case-bg.png"); height:500px;}
 
-.product-background {background-image: url("../img/ad/product-bg.png"); height:500px;}
+.product-background {background-image: url("../img/product-bg.png"); height:500px;}
 
 .service-background {background-image: url("../img/News.jpg"); height:500px;}
 
