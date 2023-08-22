@@ -1,4 +1,4 @@
-body {background-color: #fff; color: #333; font-family: "Microsoft YaHei",Helvetia,"lucida Grande",Verdana,Arial;font-size: 14px;line-height: 1.42857; }
+body {background-color: #fff; color: #333; font-family: "Microsoft YaHei", Helvetia, "lucida Grande", Verdana,Arial; font-size: 14px; line-height: 1.42857; }
 
 a:hover, a:focus {outline:inherit}
 
@@ -6,7 +6,7 @@ a:hover, a:focus {outline:inherit}
 
 .navbar-collapse {border:none; box-shadow: none;}
 
-.header-main {background-attachment: fixed; background-color: rgb(14, 14, 24); height: 860px; /*background-image: url("../img/header-bj1.png"); min-height: 690px; padding-bottom: 102px; background-position: 50% 100%; background-repeat: no-repeat; background-size: cover; box-shadow: -6px 0 0 0 rgb(0, 0, 0); position: relative; transform: rotate(0deg) scale(1) translate(0%, 0%); transition: all 2s ease 0s;*/}
+.header-main {background-attachment: fixed; background-color: rgb(14, 14, 24); position: relative;/*background-image: url("../img/header-bj1.png"); min-height: 690px; padding-bottom: 102px; background-position: 50% 100%; background-repeat: no-repeat; background-size: cover; box-shadow: -6px 0 0 0 rgb(0, 0, 0); position: relative; transform: rotate(0deg) scale(1) translate(0%, 0%); transition: all 2s ease 0s;*/}
 
 .header-section {padding-left:0; padding-right:0;}
 
@@ -15,7 +15,7 @@ a:hover, a:focus {outline:inherit}
 .navbar-default {border-color:inherit;}
 
 /*.header-back {background-color: transparent; background-image: url("../icon/body.png"); height: 100%;  min-height: 700px; position: absolute;  width: 100%;}*/
-.header-back {background-color: rgba(0,0,0,0); /*height: 100%;  min-height: 700px; position: absolute;  width: 100%;*/}
+.header-back {background-color: rgba(0,0,0,0);}
 
 .white-background {background-color: rgb(255, 255, 255);}
 
@@ -29,9 +29,9 @@ a:hover, a:focus {outline:inherit}
 
 .service-background {background-color: rgb(46, 30, 6); /*background-image: url("../img/News.jpg"); height:500px;*/}
 
-.navbar-brands { background-color: transparent;border-bottom:1px solid rgba(255, 255, 255, 0.15); border-radius: 0; z-index: 5; padding:20px 30px;}
+.navbar-brands { background-color: transparent; border-bottom:1px solid rgba(255, 255, 255, 0.15); border-radius: 0; z-index: 5; padding:20px 30px;}
 
-.navbar-logo { background-image: url("../icon/logo1.png");  background-position: 50% 50%; background-repeat: no-repeat; background-size: contain;width: 150px;}
+.navbar-logo { background-image: url("../icon/logo1.png");  background-position: 50% 50%; background-repeat: no-repeat; background-size: contain; width: 150px;}
 
 .navbar-default .navbar-nav > li > a {color:#fff;}
 
@@ -48,6 +48,8 @@ a:hover, a:focus {outline:inherit}
 .container-index h1 {text-align:center; font-size:50px;}
 
 .container-index p {text-align:center}
+
+.container-index img {text-align:center; line-height: 860px;}
 
 .container-zindex span {display:block; font-size:40px; font-weight:normal;}
 
