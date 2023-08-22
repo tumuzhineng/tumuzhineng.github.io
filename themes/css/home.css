@@ -6,7 +6,7 @@ a:hover, a:focus {outline:inherit}
 
 .navbar-collapse {border:none; box-shadow: none;}
 
-.header-main {background-attachment: fixed; background-color: rgb(14, 14, 24); background-image: url("../img/header-bj1.png"); background-position: 50% 100%; background-repeat: no-repeat; background-size: cover;  box-shadow: -6px 0 0 0 rgb(0, 0, 0); height: 70%; min-height: 690px; padding-bottom: 102px; position: relative; transform: rotate(0deg) scale(1) translate(0%, 0%); transition: all 2s ease 0s;}
+.header-main {background-attachment: fixed; background-color: rgb(14, 14, 24); height: 860px; /*background-image: url("../img/header-bj1.png"); min-height: 690px; padding-bottom: 102px; background-position: 50% 100%; background-repeat: no-repeat; background-size: cover; box-shadow: -6px 0 0 0 rgb(0, 0, 0); position: relative; transform: rotate(0deg) scale(1) translate(0%, 0%); transition: all 2s ease 0s;*/}
 
 .header-section { padding-left:0; padding-right:0;}
 
@@ -15,7 +15,7 @@ a:hover, a:focus {outline:inherit}
 .navbar-default {border-color:inherit;}
 
 /*.header-back {background-color: transparent; background-image: url("../icon/body.png"); height: 100%;  min-height: 700px; position: absolute;  width: 100%;}*/
-.header-back {background-color: rgba(0,0,0,0); height: 100%;  min-height: 700px; position: absolute;  width: 100%;}
+.header-back {background-color: rgba(0,0,0,0); /*height: 100%;  min-height: 700px; position: absolute;  width: 100%;*/}
 
 .about-background {background-color: rgb(46, 30, 6);  /*background-image: url("../img/intro-bg-mtn.png"); height:500px;*/}
 
