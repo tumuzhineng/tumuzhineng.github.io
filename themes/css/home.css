@@ -19,13 +19,13 @@ a:hover, a:focus {outline:inherit}
 
 .white-background {background-color: rgb(255, 255, 255);}
 
-.about-background {background-color: rgb(46, 30, 6);  /*background-image: url("../img/intro-bg-mtn.png"); height:500px;*/}
+.autonomousdriving-background {background-color: rgb(46, 30, 6);  /*background-image: url("../img/intro-bg-mtn.png"); height:500px;*/}
 
-.contact-background {background-color: rgb(23, 63, 63); /*background-image: url("../img/contact-bg.png"); height:500px;*/}
+.videoimage-background {background-color: rgb(23, 63, 63); /*background-image: url("../img/contact-bg.png"); height:500px;*/}
 
-.case-background {background-color: rgb(58, 8, 62); /*background-image: url("../img/case-bg.png"); height:500px;*/}
+.digitaltwin-background {background-color: rgb(58, 8, 62); /*background-image: url("../img/case-bg.png"); height:500px;*/}
 
-.product-background {background-color: rgb(58, 6, 3); /*background-image: url("../img/product-bg.png"); height:500px;*/}
+.facerecognition-background {background-color: rgb(58, 6, 3); /*background-image: url("../img/product-bg.png"); height:500px;*/}
 
 .service-background {background-color: rgb(46, 30, 6); /*background-image: url("../img/News.jpg"); height:500px;*/}
 
