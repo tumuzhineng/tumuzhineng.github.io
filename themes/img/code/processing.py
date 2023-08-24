@@ -3,7 +3,7 @@ import numpy as np
 
 #290 110
 
-def enlarge(image):
+def pad(image):
     h,w,c = image.shape
     if h/110 > w/290:
         w_new = int(h/110*290)
@@ -34,4 +34,4 @@ def crop(image):
     cv2.waitKey()
 
 image = cv2.imread('themes/img/code/h3.png', cv2.IMREAD_UNCHANGED)
-crop(image)
+pad(image)
