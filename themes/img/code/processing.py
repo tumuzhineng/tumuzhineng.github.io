@@ -34,4 +34,14 @@ def crop(image):
     cv2.waitKey()
 
 image = cv2.imread('themes/img/code/h3.png', cv2.IMREAD_UNCHANGED)
+h,w,c = image.shape
+'''
+for i in range(w):
+    if image[0,i,3] == 0:
+        print(i)
+image = image[:,6:2159]
+cv2.imwrite('themes/img/code/h3_1.png', image)
+cv2.imshow('1', image)
+cv2.waitKey()
+'''
 pad(image)
