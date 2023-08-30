@@ -6,7 +6,7 @@ a:hover, a:focus {outline:inherit}
 
 .navbar-collapse {border:none; box-shadow: none;}
 
-.header-main {background-attachment: fixed; background-color: rgb(13, 17, 23); position: relative; min-height: 888px;/*background-image: url("../img/header-bj1.png"); min-height: 690px; padding-bottom: 102px; background-position: 50% 100%; background-repeat: no-repeat; background-size: cover; box-shadow: -6px 0 0 0 rgb(0, 0, 0); position: relative; transform: rotate(0deg) scale(1) translate(0%, 0%); transition: all 2s ease 0s;*/}
+.header-main {background-attachment: fixed; background-color: rgb(13, 17, 23); background-size: cover; position: relative; min-height: 888px; background-repeat: no-repeat;}
 
 .header-section {padding-left:0; padding-right:0;}
 
@@ -29,7 +29,7 @@ a:hover, a:focus {outline:inherit}
 
 .service-background {background-color: rgb(46, 30, 6); /*background-image: url("../img/News.jpg"); height:500px;*/}
 
-.navbar-brands { background-color: transparent; border-bottom:1px solid rgba(255, 255, 255, 0.15); border-radius: 0; z-index: 5; padding:20px 30px;}
+.navbar-brands {background-color: transparent; border-bottom:1px solid rgba(255, 255, 255, 0.15); border-radius: 0; z-index: 5; padding:20px 30px;}
 
 .navbar-logo { background-image: url("../icon/logo1.png");  background-position: 50% 50%; background-repeat: no-repeat; background-size: contain; width: 150px;}
 
