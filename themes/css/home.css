@@ -6,7 +6,7 @@ a:hover, a:focus {outline:inherit}
 
 .navbar-collapse {border:none; box-shadow: none;}
 
-.header-main {background-attachment: fixed; background-color: rgb(13, 17, 23); background-size: cover; position: relative; min-height: 888px; background-repeat: no-repeat;}
+.header-main {background-attachment: fixed; background-color: rgb(13, 17, 23); background-size: cover; position: relative; min-height: 988px; background-repeat: no-repeat;}
 
 .header-section {padding-left:0; padding-right:0;}
 
