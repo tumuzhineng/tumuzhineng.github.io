@@ -6,7 +6,8 @@ a:hover, a:focus {outline:inherit}
 
 .navbar-collapse {border:none; box-shadow: none;}
 
-.header-main {background-attachment: fixed; background-color: rgb(13, 17, 23); background-size: cover; position: relative; min-height: 988px; background-repeat: no-repeat;}
+
+.header-main {background-attachment: fixed; background-color: rgb(22, 24, 35); background-size: cover; position: relative; min-height: 988px; background-repeat: no-repeat;}
 
 .header-section {padding-left:0; padding-right:0;}
 
@@ -19,7 +20,9 @@ a:hover, a:focus {outline:inherit}
 
 .white-background {background-color: rgb(255, 255, 255);}
 
-.autonomousdriving-background {background-color: rgb(34, 27, 45);  /*background-image: url("../img/intro-bg-mtn.png"); height:500px;*/}
+.dark-background {background-color: rgb(13, 17, 23);}
+
+.autonomousdriving-background {background-color: rgb(46,139,87);  /*background-image: url("../img/intro-bg-mtn.png"); height:500px;*/}
 
 .videoimage-background {background-color: rgb(23, 63, 63); /*background-image: url("../img/contact-bg.png"); height:500px;*/}
 
@@ -31,7 +34,7 @@ a:hover, a:focus {outline:inherit}
 
 .navbar-brands {background-color: transparent; border-bottom:1px solid rgba(255, 255, 255, 0.15); border-radius: 0; z-index: 5; padding:20px 30px;}
 
-.navbar-logo { background-image: url("../icon/logo1.png");  background-position: 50% 50%; background-repeat: no-repeat; background-size: contain; width: 150px;}
+.navbar-logo {background-image: url("../icon/logo1.png");  background-position: 50% 50%; background-repeat: no-repeat; background-size: contain; width: 150px;}
 
 .navbar-default .navbar-nav > li > a {color:#fff;}
 
