@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">-->
     <title>数字孪生--图慕智能</title>
     <link rel="icon" type="image/png" href="themes/icon/favicon.png">
 
@@ -16,159 +17,511 @@
     <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
     <script src="themes/js/jquery.min.js"></script>
 
-    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <!-- 最新的 Bootstrap 核心 JavaScript文件 -->
     <script src="themes/js/bootstrap.min.js"></script>
 
-    <!-- 最新的 Bootstrap  自定义样式 文件 -->
-    <link href="themes/css/home.css" rel="stylesheet"  type="text/css">
+    <!-- 最新的 Bootstrap  自定义样式文件 -->
+    <link href="themes/css/home.css" rel="stylesheet" type="text/css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
 
+        .cover-container {
+            text-align: center;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .animated {
+            opacity: 0; /* 初始状态为透明 */
+        }
+
+        /* 自定义动画效果 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translate3d(0, 100%, 0);
+            }
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        .fadeInUp {
+            animation: fadeInUp 1s ease forwards;
+        }
+        .video-section {
+            position: relative;
+            height: 100vh; /* 设置视频容器的高度为视口高度 */
+            overflow: hidden;
+        }
+
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%; /* 使视频宽度充满整个容器 */
+            height: 100%; /* 使视频高度充满整个容器 */
+            object-fit: cover; /* 使用 object-fit 以确保视频完全覆盖容器 */
+            z-index: -1;
+        }
+
+        .container-zindex {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cover-container {
+            text-align: center;
+            color: #fff;
+            padding: 20px;
+        }
+        .video-section video {
+            filter: brightness(80%) contrast(120%); /* 根据需要调整滤镜效果 */
+        }
+        .video-section {
+            opacity: 0.5; /* 透明度值，可以根据需要调整 */
+        }
+        .overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: rgb(255, 255, 255);
+            font-size: 72px;
+            font-weight: bold;
+            text-align: center;
+            padding: 20px; /* 增加横幅的高度 */
+            background: rgba(0, 0, 0, 0.5); /* 设置横幅的背景颜色和透明度 */
+            width: 100%; /* 横幅宽度占满整个视频 */
+            box-sizing: border-box; /* 让 padding 不影响总宽度 */
+        }
+
+        .white-text {
+            color: white;
+            font-size: 28px
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: bold;
+            color: #070760;
+        }
+        .banner {
+            background-color: #070760;
+            color: white;
+            padding: 20px;
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center; 
+        }  
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .key-technologies {
+            padding: 40px 0;
+        }
+
+        .key-tech-container {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s, transform 0.8s;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 50px;
+        }
+
+        .key-tech img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .key-tech h3 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .key-tech p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        #prev,
+        #next {
+            position: absolute;
+            top: 35%;
+            transform: translateY(-50%);
+            font-size: 50px;
+            color: #333;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        #prev {
+            left: 300px;
+        }
+
+        #next {
+            right: 300px;
+        }
+
+        .sections-container {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            
+        }
+
+        .section {
+            flex: 0 0 100%;
+            box-sizing: border-box;
+        }
+
+        .content-container {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .content-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .content-container h3 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .content-container p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+            
+        
+    </style>
+    
 </head>
+
 <body>
-
-<!--------- header  begin------------->
-<div class=" container-fluid header-main header-section digitaltwin-background">
-    <div class="header-back"></div>
-    <nav class="navbar navbar-default  navbar-brands  ">
-        <div class="container">
-            <div class="navbar-header">
-                <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="index.html" class="navbar-logo navbar-brand "></a>
+    <!--------- header  begin------------->
+    <div class="container-fluid header-main header-section digitaltwin-background">
+        <div class="header-back"></div>
+        <nav class="navbar navbar-default navbar-brands ">
+            <div class="container">
+                <div class="navbar-header">
+                    <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse"
+                        class="navbar-toggle collapsed" type="button">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="index.html" class="navbar-logo navbar-brand "></a>
+                </div>
+                <div class="collapse navbar-collapse navbar-right" id="navbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a aria-expanded="false" role="button" aria-haspopup="true" class="dropdown-toggle"
+                                href="index.html">首页</a>
+                        </li>
+                        <li class="dropdown">
+                            <a aria-expanded="false" role="button" aria-haspopup="true" class="dropdown-toggle"
+                                href="autonomousdriving.html">自动驾驶</a>
+                        </li>
+                        <li class="dropdown">
+                            <a aria-expanded="false" role="button" aria-haspopup="true" class="dropdown-toggle"
+                                href="facerecognition.html">人脸识别</a>
+                        </li>
+                        <li class="active">
+                            <a aria-expanded="false" role="button" aria-haspopup="true" class="dropdown-toggle"
+                                href="digitaltwin.html">数字孪生</a>
+                        </li>
+                        <!--<li class="dropdown">-->
+                        <!--<a aria-expanded="false" role="button" aria-haspopup="true" class="dropdown-toggle" href="service.html">微商服务</a>-->
+                        <!--</li>-->
+                        <li class="dropdown">
+                            <a aria-expanded="false" role="button" aria-haspopup="true" class="dropdown-toggle"
+                                href="videoimage.html">视频图像</a>
+                        </li>
+                    </ul>
+                </div><!--/.nav-collapse -->
             </div>
-            <div class="collapse navbar-collapse navbar-right" id="navbar">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown">
-                        <a aria-expanded="false" role="button" aria-haspopup="true"  class="dropdown-toggle" href="index.html" >首页</a>
-                    </li>
-                    <li class="dropdown">
-                        <a aria-expanded="false" role="button" aria-haspopup="true"  class="dropdown-toggle" href="autonomousdriving.html" >自动驾驶</a>
-                    </li>
-                    <li class="dropdown">
-                        <a aria-expanded="false" role="button" aria-haspopup="true"  class="dropdown-toggle" href="facerecognition.html" >人脸识别</a>
-                    </li>
-                    <li class="active">
-                        <a aria-expanded="false" role="button" aria-haspopup="true"  class="dropdown-toggle" href="digitaltwin.html" >数字孪生</a>
-                    </li>
-                    <!--<li class="dropdown">-->
-                        <!--<a aria-expanded="false" role="button" aria-haspopup="true"  class="dropdown-toggle" href="service.html" >微商服务</a>-->
-                    <!--</li>-->
-                    <li class="dropdown">
-                        <a aria-expanded="false" role="button" aria-haspopup="true"  class="dropdown-toggle" href="videoimage.html" >视频图像</a>
-                    </li>
-                </ul>
-            </div><!--/.nav-collapse -->
+        </nav>
+
+        
+
+        <div class="container container-zindex cover-container am-animation-scale-up" data-am-scrollspy="{animation: 'scale-up', repeat: false}">
+            <h1 class="display-4 text-center animated fadeInUp">数字孪生<br></h1>
+            <p class="lead text-center white-text animated fadeInUp">
+                <h2 class="display-4 text-center white-text animated fadeInUp"><br><br>“通过创建物理实体的数字复制品来模拟、分析和优化真实世界的过程。”</h2>
+                <br><br>
+                <h2 class="white-text animated fadeInUp"><br><br>我们的数字孪生方案将为您的项目提供实时模拟和智能分析，以提高效率和可持续性。</h2>
+            </p>
         </div>
-    </nav>
-    <div class="container container-zindex cover-container am-animation-scale-up" data-am-scrollspy="{animation: 'scale-up', repeat: false}">
-        <h1><span>数字孪生</span><br>网页编辑中……</h1>
-        <p></p>
+    
+        <script>
+            // 使用 JavaScript 控制动态显示
+            const animatedElements = document.querySelectorAll('.animated');
+    
+            function checkVisibility() {
+                const windowHeight = window.innerHeight;
+    
+                animatedElements.forEach(element => {
+                    const rect = element.getBoundingClientRect();
+                    const isVisible = rect.top < windowHeight && rect.bottom >= 0;
+    
+                    if (isVisible) {
+                        element.classList.add('fadeInUp');
+                    }
+                });
+            }
+    
+            // 监听滚动事件
+            window.addEventListener('scroll', checkVisibility);
+    
+            // 初始加载时检查可见性
+            checkVisibility();
+        </script>
+        <div class="video-section">
+            <video autoplay muted loop poster="video-poster.jpg">
+                <source src="digitaltwin.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="overlay-text">数字化未来的创新</div>
+        </div>
+
     </div>
+    
+    <!--------- header  End------------->
+    
+    <h1 style="font-size: 36px; font-weight: bold;"><span class="banner">1.关键技术</span></h1>
 
-</div>
-<!--------- header  End------------->
-
-
-<!--------Client case begin-------->
-<!--
-<main role="main" class="main Client-main">
-    <div class="container">
-        <div class="text-center"><h1>经典案例</h1></div>
-            <div class="row Client-list" id="post-list ">
-                <div class="col-xs-12 col-sm-4">
-                    <article class="post tag-guo-wai-wang-zhan tag-bootstrap-v3">
-                        <section class="post-featured-image">
-                            <a target="_blank" onclick="_hmt.push(['_trackEvent', 'imagelink', 'click', 'KORE'])" class="thumbnail" href="">
-                                <img src="themes/img/case/ps3.jpg">
-                            </a>
-                        </section>
-                    </article>
+    <section class="key-technologies">
+        <div class="container ">
+            <br><br>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="key-tech-container" id="tech1">
+                        <div class="key-tech">
+                            <img src="figure/3d_modeling.jpg" alt="三维建模图">
+                            <h3>三维建模</h3>
+                            <p>通过创建三维模型来模拟实际世界的对象和环境,
+                                它借助计算机图形学和数学原理，将实际世界中的物体和环境以数字形式建模。
+                                 </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-xs-12 col-sm-4">
-                    <article class="post tag-guo-wai-wang-zhan tag-bootstrap-v3">
-                        <section class="post-featured-image">
-                            <a target="_blank" onclick="_hmt.push(['_trackEvent', 'imagelink', 'click', 'KORE'])" class="thumbnail" href="">
-                                <img src="themes/img/case/ps4.jpg">
-                            </a>
-                        </section>
-
-                    </article>
+                
+               
+                <div class="col-md-6">
+                    <div class="key-tech-container" id="tech2">
+                        <div class="key-tech">
+                            <img src="figure/physical_simulation.jpg" alt="物理仿真图">
+                            <h3>物理仿真</h3>
+                            <p>数字孪生的物理仿真技术利用有限元分析、计算流体动力学等手段，
+                                通过计算机模拟真实物体的力学、热学和流体力学行为。这包括模拟结构的强度、
+                                材料的应力分布、流体的流动特性等。通过高度准确的仿真，数字孪生能够实时模拟物理过程，
+                                为工业设计、城市规划等领域提供可靠的数据和预测，推动创新和效率提升。</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-xs-12 col-sm-4">
-                    <article class="post tag-guo-wai-wang-zhan tag-bootstrap-v3">
-                        <section class="post-featured-image">
-                            <a target="_blank" onclick="_hmt.push(['_trackEvent', 'imagelink', 'click', 'KORE'])" class="thumbnail" href="">
-                                <img src="themes/img/case/ps11.jpg">
-                            </a>
-                        </section>
-
-                    </article>
+                
+                <div class="col-md-6">
+                    <div class="key-tech-container" id="tech3">
+                        <div class="key-tech">
+                            <img src="figure/data_integration.jpg" alt="数据集成图">
+                            <h3>数据集成</h3>
+                            <p> 
+                                
+                                数据集成创造了一个包罗万象的数字模型，为决策者提供了全面的信息基础。 
+                                及时更新的数据集成使得数字相邻生模型具有更好的实时性和反映真实情况的能力。</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-xs-12 col-sm-4">
-                    <article class="post tag-guo-wai-wang-zhan tag-bootstrap-v3">
-                        <section class="post-featured-image">
-                            <a target="_blank" onclick="_hmt.push(['_trackEvent', 'imagelink', 'click', 'KORE'])" class="thumbnail" href="">
-                                <img src="themes/img/case/ps11.jpg" title="摩托罗拉" about="摩托罗拉">
-                            </a>
-                        </section>
-                    </article>
-                </div>
-
-                <div class="col-xs-12 col-sm-4">
-                        <article class="post tag-guo-wai-wang-zhan tag-bootstrap-v3">
-                            <section class="post-featured-image">
-                                <a target="_blank" onclick="_hmt.push(['_trackEvent', 'imagelink', 'click', 'KORE'])" class="thumbnail" href="">
-                                  <img src="themes/img/case/ps7.jpg">
-                                </a>
-                            </section>
-                        </article>
-                </div>
-                <div class="col-xs-12 col-sm-4">
-                        <article class="post tag-guo-wai-wang-zhan tag-bootstrap-v3">
-                            <section class="post-featured-image">
-                                <a target="_blank" onclick="_hmt.push(['_trackEvent', 'imagelink', 'click', 'KORE'])" class="thumbnail" href="">
-                                    <img src="themes/img/case/ps6.jpg">
-                                </a>
-                            </section>
-                        </article>
-                </div>
-                <div class="col-xs-12 col-sm-4">
-                    <article class="post tag-guo-wai-wang-zhan tag-bootstrap-v3">
-                        <section class="post-featured-image">
-                            <a target="_blank" onclick="_hmt.push(['_trackEvent', 'imagelink', 'click', 'KORE'])" class="thumbnail" href="">
-                                <img src="themes/img/case/ps7.jpg">
-                            </a>
-                        </section>
-                    </article>
-                </div>
-                <div class="col-xs-12 col-sm-4">
-                    <article class="post tag-guo-wai-wang-zhan tag-bootstrap-v3">
-                        <section class="post-featured-image">
-                            <a target="_blank" onclick="_hmt.push(['_trackEvent', 'imagelink', 'click', 'KORE'])" class="thumbnail" href="">
-                                <img src="themes/img/case/ps6.jpg">
-                            </a>
-                        </section>
-                    </article>
-                </div>
-                <div class="col-xs-12 col-sm-4">
-                    <article class="post tag-guo-wai-wang-zhan tag-bootstrap-v3">
-                        <section class="post-featured-image">
-                            <a target="_blank" onclick="_hmt.push(['_trackEvent', 'imagelink', 'click', 'KORE'])" class="thumbnail" href="">
-                                <img src="themes/img/case/ps3.png">
-                            </a>
-                        </section>
-                    </article>
+                <div class="col-md-6">
+                    <div class="key-tech-container" id="tech4">
+                        <div class="key-tech">
+                            <img src="figure/artificial_intelligence.png" alt="人工智能图">
+                            <h3>人工智能</h3>
+                            <p>人工智能在数字孪生中扮演关键角色，通过整合各种智能算法，实现对数字模型的智能决策和优化。
+                                人工智能使得数字孪生系统能够自动化地做出决策，响应环境变化。 
+                                在制造和生产流程中，人工智能可用于优化资源分配和生产计划。 
+                                其实现方式主要有机器学习、 决策树等。</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</main>
--->
-<!--------Client case End-------->
+    </section>
+                
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const techSections = document.querySelectorAll('.key-tech-container');
+    
+            function isInViewport(element) {
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+    
+            function handleScroll() {
+                techSections.forEach((tech, index) => {
+                    if (isInViewport(tech)) {
+                        tech.style.opacity = 1;
+                        tech.style.transform = 'translateY(0)';
+                    }
+                });
+            }
+    
+            window.addEventListener('scroll', handleScroll);
+        });
+    </script>
+    
+    
+    
+        <!-- Application Examples Section -->
+                    <br><br>
+                    <br><br>
+                    <h1 style="font-size: 36px; font-weight: bold; margin: 0;"><span class="banner">2.应用场景</span></h1>
+                    <br><br>
+                    <br><br>
+        <section>
+            <div id="prev">&lt;</div>
+            <div id="next">&gt;</div>
+    
+            <div class="sections-container">
+                <div class="section">
+                    <div class="content-container">
+                        <img src="figure/smart_city.jpg" alt="智慧城市图">
+                        <h3>智慧城市</h3>
+                        <p>通过数字孪生技术，城市规划者和决策者能够创建城市的精确数字模型，
+                            模拟并分析各种城市运行场景。包括交通流、能源等通过数字孪生，
+                            城市管理者可以更准确地预测和了解城市的运行情况，从而制定更科学、
+                            高效的城市规划和发展战略。这种实时的数字模拟还使得城市能够更快速地应对各种挑战，
+                            提高资源利用效率，优化城市基础设施，为居民提供更安全、便捷和宜居的城市生活环境。</p>
+                    </div>
+                </div>
+            
 
+            <div class="section">
+                    <div class="content-container">
+                        <img src="figure/autonomous_driving.webp" alt="自动驾驶图">
+                        <h3>自动驾驶</h3>
+                        <p>创建真实车辆的高度精确的数字副本，模拟各种交通状况和路况。
+                            这种数字模拟使得自动驾驶系统可以在虚拟环境中进行大量测试和优化，
+                            从而提高其在真实世界中的安全性和性能。
+                            制造商可以通过数字孪生技术更好地了解自动驾驶汽车在复杂交通场景中的行为，
+                            进行实时的算法调整和优化，以确保汽车在各种情况下都能够高效、安全地运行。</p>
+                    </div>
+                </div>
+            
+            <div class="section">
+                <div class="content-container">
+                    <img src="figure/smart_manufacturing.png" alt="智能制造图">
+                    <h3>智能制造</h3>
+                    <p>通过数字孪生，制造业者能够创建工厂中各个设备和生产线的高度真实的数字模型。
+                        这些模型不仅包括设备的物理几何形状，还涵盖了其运行状态、性能参数等丰富信息。
+                        借助数字孪生，制造商可以进行设备的虚拟仿真和故障诊断，预测设备的性能表现，优化生产流程。
+                        数字孪生为工厂提供了实时监控和分析生产数据的能力，
+                        从而实现生产线的自动化管理。通过模拟不同的生产场景，
+                        制造业者能够优化生产计划、提高生产效率，减少故障时间，
+                        实现更可靠的制造此外，数字孪生还支持制造过程中的即时反馈和调整，
+                        使生产系统能够更灵活地应对市场需求的变化，提升整体制造业的竞争力。</p>
+                </div>
+            </div>
+            <div class="section">
+                <div class="content-container">
+                    <img src="figure/healthcare.webp" alt="医疗保健图">
+                    <h3>医疗保健</h3>
+                    <p>数字孪生技术能够创建精确的人体模型，
+                        这些模型可以包括个体的解剖结构、生理特征和事故信息。
+                        同时，数字孪生允许医生进行精确的手术模拟和规划。
+                        医疗专业人士可以在数字环境中模拟复杂的手术过程，提前识别潜在的风险并制定更有效的治疗方案。
+                        另外，数字孪生还支持个性化医疗的发展。通过对患者个体数据的数字建模，
+                        医生可以更好地了解患者的生理状况和疾病特征，从而制定更个性化的治疗方案。
+                        这种个性化的医疗模式可以提高治疗的效果，减少不必要的医疗资源浪费。</p>
+                </div>
+            </div>
+        </div>
+            
+    </section>
+    
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+    const sectionsContainer = document.querySelector('.sections-container');
+    const sections = document.querySelectorAll('.sections-container .section');
+    const prevButton = document.getElementById('prev');
+    const nextButton = document.getElementById('next');
+
+    let currentIndex = 0;
+
+    function showSection(index) {
+        currentIndex = index;
+        const translateValue = -100 * index + '%';
+        sectionsContainer.style.transform = 'translateX(' + translateValue + ')';
+    }
+
+    prevButton.addEventListener('click', function () {
+        if (currentIndex > 0) {
+            showSection(currentIndex - 1);
+        }
+    });
+
+    nextButton.addEventListener('click', function () {
+        if (currentIndex < sections.length - 1) {
+            showSection(currentIndex + 1);
+        }
+    });
+});
+
+
+        </script>
+        
+    </html>
+    
 
 
 <!--------footer begin-------->
